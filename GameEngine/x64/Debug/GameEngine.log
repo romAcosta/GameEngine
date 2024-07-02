@@ -1,0 +1,6 @@
+﻿  Main.cpp
+C:\neumont\C++\GameEngine\GameEngine\Source\Main.cpp(74,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\neumont\C++\GameEngine\GameEngine\Source\Main.cpp(74,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\neumont\C++\GameEngine\GameEngine\Source\Main.cpp(74,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\neumont\C++\GameEngine\GameEngine\Source\Main.cpp(74,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  GameEngine.vcxproj -> C:\neumont\C++\GameEngine\x64\Debug\Game.exe
