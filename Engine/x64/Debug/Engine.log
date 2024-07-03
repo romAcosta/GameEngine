@@ -1,2 +1,4 @@
-﻿  Input.cpp
+﻿  Particle.cpp
+C:\neumont\C++\GameEngine\Engine\Source\Particle.cpp(15,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\neumont\C++\GameEngine\Engine\Source\Particle.cpp(15,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Engine.vcxproj -> C:\neumont\C++\GameEngine\x64\Debug\Engine.lib
