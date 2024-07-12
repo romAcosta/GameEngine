@@ -24,11 +24,15 @@ void Renderer::Shutdown()
 
 bool Renderer::CreateWindow(std::string title, int width, int height)
 {
+	m_width = width;
+	m_height = height;
+
+
 	// create window
 	// returns pointer to window if successful or nullptr if failed
 	SDL_Window* window = SDL_CreateWindow(title.c_str(),
 		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-		width, height,
+		m_width, m_height,
 		SDL_WINDOW_SHOWN);
 	if (window == nullptr)
 	{

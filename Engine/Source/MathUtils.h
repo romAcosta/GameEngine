@@ -13,12 +13,22 @@ namespace Math {
 	constexpr float RadToDeg(float radians) {return radians * (180.0f / Pi);}
 	constexpr float DegToRad(float degrees) {return degrees * ( Pi/180.0f);}
 
-	float Sin(float radians) {
+	inline float Sin(float radians) {
 		return std::sinf(radians);
 	}
 
-	float Cos(float radians) {
+	inline float Cos(float radians) {
 		return std::cosf(radians);
+	}
+
+	inline float Sqrt(float value)
+	{
+		return std::sqrtf(value);
+	}
+
+	inline float Atan2(float y, float x)
+	{
+		return std::atan2f(y, x);
 	}
 
 	/// <summary>
@@ -36,4 +46,23 @@ namespace Math {
 	
 	template<typename T>
 	T Abs(T value) { return (value < 0) ? -value: value; }
+
+
+	template<typename T>
+	inline T Clamp(T v, T min, T max)
+	{
+		if (v < min) return min;
+		if (v > max) return max;
+
+		return v;
+	}
+
+	inline int Wrap(int value, int max) {
+		return value % max + ((value < 0) ? max : 0);
+	}
+
+	inline float Wrap(float value, float max) {
+		return std::fmodf(value, max) + ((value < 0.0f) ? max : 0.0f);
+	}
+	
 }

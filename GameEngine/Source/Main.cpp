@@ -6,6 +6,8 @@
 #include "ETime.h"
 #include "Color.h"
 #include "MathUtils.h"
+#include "Model.h"
+#include "Transform.h"
 
 #include <SDL.h>
 #include <iostream>
@@ -34,9 +36,9 @@ int main(int argc, char* argv[])
 
 	Time time;
 
-	Color color;
+	
 
-	std::vector<Vector2> points;
+	
 	
 	std::vector<Particle> particles;
 	/*for (int i = 0; i < 1000; i++) {
@@ -46,6 +48,37 @@ int main(int argc, char* argv[])
 
 	float offset = 0;
 
+	std::vector<Vector2> points;
+	points.push_back(Vector2{ 0, 5});
+	points.push_back(Vector2{ 1, 4 });
+	points.push_back(Vector2{ 7, 5 });
+	points.push_back(Vector2{ 7, 7});
+	points.push_back(Vector2{ 4, 8 });
+	points.push_back(Vector2{ 7, 9 });
+	points.push_back(Vector2{ 7, 10 });
+	points.push_back(Vector2{ 6, 11 });
+	points.push_back(Vector2{ 4,11 });
+	points.push_back(Vector2{ 4, 14 });
+	points.push_back(Vector2{ 6, 13 });
+	points.push_back(Vector2{ 6, 14 });
+	points.push_back(Vector2{ 4, 15 });
+	points.push_back(Vector2{ 4, 18 });
+	points.push_back(Vector2{ 3, 18 });
+	points.push_back(Vector2{ 2, 16 });
+	points.push_back(Vector2{ 1, 18 });
+	points.push_back(Vector2{ 0, 18 });
+	points.push_back(Vector2{ 0, 5 });
+
+
+
+	Color color{ 1, 1, 1};
+	Model model{ points, color };
+	Vector2 position{ 400, 300 };
+	float rotation = 0;
+
+	Transform transform{ {renderer.GetWidth() >> 1, renderer.GetHeight() >> 1},0,5 };
+
+	
 
 
 	//Sound Load
@@ -104,6 +137,8 @@ int main(int argc, char* argv[])
 
 
 
+
+
 		//Update
 		Vector2 mousePosition = input.GetMousePosition();
 
@@ -115,13 +150,31 @@ int main(int argc, char* argv[])
 			
 		}
 
-		//if (input.GetMouseButtonDown(0) && input.GetPrevMouseButtonDown(0)) {
-		//	float distance = (points.back() - mousePosition).Length();
-		//	if (distance > 5) {
-		//		points.push_back(mousePosition);
-		//	}
-		//	//points.push_back(mousePosition);
-		//}
+
+		
+		float thrust = 0;
+		if (input.GetKeyDown(SDL_SCANCODE_LEFT))    transform.rotation -= Math::DegToRad(100) * time.GetDeltaTime();
+		if (input.GetKeyDown(SDL_SCANCODE_RIGHT))    transform.rotation += Math::DegToRad(100) * time.GetDeltaTime();
+
+
+		if (input.GetKeyDown(SDL_SCANCODE_UP))        thrust = 40;
+		if (input.GetKeyDown(SDL_SCANCODE_DOWN))    thrust = -40;
+
+		Vector2 velocity = Vector2{ thrust, 0.0f }.Rotate( transform.rotation);
+		transform.position += (velocity * time.GetDeltaTime());
+		transform.position.x = Math::Wrap(transform.position.x, (float)renderer.GetWidth());
+		transform.position.y = Math::Wrap(transform.position.y, (float)renderer.GetHeight());
+
+
+
+
+
+		
+
+
+		position = position + (velocity * time.GetDeltaTime());
+		rotation = rotation + time.GetDeltaTime();
+		
 
 
 
@@ -132,7 +185,7 @@ int main(int argc, char* argv[])
 		}
 
 		
-		//// clear screen
+		// clear screen
 		renderer.SetColor(0, 0, 0, 0);
 		renderer.BeginFrame();
 
@@ -141,26 +194,18 @@ int main(int argc, char* argv[])
 		// draw line
 		
 		
-		/*color.randomize();*/
+		
 
 
-		renderer.SetColor(random(255), random(255), random(255), 0);
+		
 		
 		for (Particle particle : particles) {
 			particle.Draw(renderer);
 		}
 
-		float radius = 60;
-		offset -= (90 * time.GetDeltaTime());
-		for (float angle = 0; angle < 360; angle += 360.0f / 300.0f) {
-			float x = Math::Cos(Math::DegToRad(angle + offset)) * Math::Sin(offset * 0.01f + angle ) * radius;
-			float y = Math::Sin(Math::DegToRad(angle + offset)) * Math::Cos(offset * 0.001f) * radius;
-			float x1 = Math::Cos(Math::DegToRad(angle + offset)) * (200 + radius);
-			float y1 = Math::Sin(Math::DegToRad(angle + offset)) * (200 + radius );
-			renderer.DrawLine(x + 400, y + 300, x1 + 400, y1 + 300);
-
-			//renderer.DrawRect(x + 400, y + 300, x1 + 400, y1 + 300);
-		}
+		renderer.SetColor(255, 255, 255, 0);
+		model.Draw(renderer, transform);
+		
 		
 
 
