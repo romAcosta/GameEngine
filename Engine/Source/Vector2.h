@@ -26,6 +26,8 @@ struct Vector2 {
 	Vector2 operator - (Vector2 v) {
 		return Vector2{ x - v.x, y - v.y };
 	}
+
+	
 	Vector2 operator * (Vector2 v) {
 		return Vector2{ x * v.x, y * v.y };
 	}
@@ -54,13 +56,15 @@ struct Vector2 {
 	Vector2& operator /= (float s) { x /= s; y /= s; return *this; }
 
 	float Angle() { return Math::Atan2(x, y); }
-	float LengthSqr() { return (x * x) + (y * y); }
-	float Length() { return std::sqrt((x * x) + (y * y)); }
+	float LengthSqr() const { return (x * x) + (y * y); }
+	float Length() const { return std::sqrt((x * x) + (y * y)); }
 
 
 	
 
 	Vector2 Rotate(float radians) const;
+
+	Vector2 Normalized() const { return *this / Length(); }
 
 
 };

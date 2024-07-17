@@ -1,14 +1,1 @@
-﻿  Input.cpp
-  Model.cpp
-C:\neumont\C++\GameEngine\Engine\Source\Model.cpp(14,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\neumont\C++\GameEngine\Engine\Source\Model.cpp(14,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\neumont\C++\GameEngine\Engine\Source\Model.cpp(14,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\neumont\C++\GameEngine\Engine\Source\Model.cpp(14,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\neumont\C++\GameEngine\Engine\Source\Model.cpp(29,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\neumont\C++\GameEngine\Engine\Source\Model.cpp(29,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\neumont\C++\GameEngine\Engine\Source\Model.cpp(29,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\neumont\C++\GameEngine\Engine\Source\Model.cpp(29,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Particle.cpp
-  Generating Code...
-fmod_vc.lib(fmod.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in sdl2.lib(SDL2.dll); second definition ignored
-  Engine.vcxproj -> C:\neumont\C++\GameEngine\x64\Debug\Engine.lib
+﻿  Engine.vcxproj -> C:\neumont\C++\GameEngine\x64\Debug\Engine.lib
