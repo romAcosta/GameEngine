@@ -4,11 +4,9 @@
 
 void Enemy::Update(float dt)
 {
-	Player* player = m_scene->GetActor<Player>();
-	if (player) {
-
-		Vector2 direction = player->GetTransform().position - m_transform.position;
-		m_velocity = direction.Normalized() * m_speed;
+	m_velocity.x = -m_speed;
+	if (m_transform.position.x < -10) {
+		m_destroyed = true;
 	}
 	Actor::Update(dt);
 }

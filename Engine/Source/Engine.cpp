@@ -4,9 +4,9 @@ Engine g_engine;
 
 bool Engine::Initialize()
 {
-	m_renderer = new Renderer();
-	m_input = new Input();
-	m_audio = new Audio();
+	m_renderer =std::make_unique<Renderer>();
+	m_input = std::make_unique<Input>();
+	m_audio = std::make_unique<Audio>();
 
 	(*m_renderer).Initialize();
 	m_renderer->CreateWindow("Game Engine", 800, 600);

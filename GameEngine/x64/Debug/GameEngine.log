@@ -1,2 +1,106 @@
-﻿  Main.cpp
+﻿  Bullet.cpp
+  Enemy.cpp
+  Game.cpp
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,54): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,49): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,44): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(142,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Game.cpp(33,15): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         ]
+  (compiling source file 'Source/Game.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56):
+  the template instantiation context (the oldest one first) is
+  	C:\neumont\C++\GameEngine\GameEngine\Source\Actors.h(21,21):
+  	see reference to function template instantiation 'std::unique_ptr<Prop,std::default_delete<Prop>> std::make_unique<Prop,Transform,Model*,int,0>(Transform &&,Model *&&,int &&)' being compiled
+  
+  Globals.cpp
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Source/Globals.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,54): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Globals.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,49): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Globals.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,44): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Globals.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(142,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source/Globals.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         ]
+  (compiling source file 'Source/Globals.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56):
+  the template instantiation context (the oldest one first) is
+  	C:\neumont\C++\GameEngine\GameEngine\Source\Actors.h(21,21):
+  	see reference to function template instantiation 'std::unique_ptr<Prop,std::default_delete<Prop>> std::make_unique<Prop,Transform,Model*,int,0>(Transform &&,Model *&&,int &&)' being compiled
+  
+  Main.cpp
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Source/Main.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,54): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Main.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,49): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Main.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,44): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Main.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(142,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source/Main.cpp')
+  
+  Player.cpp
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Source/Player.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,54): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Player.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,49): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Player.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,44): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Player.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(142,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source/Player.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Player.cpp(10,74): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\neumont\C++\GameEngine\GameEngine\Source\Player.cpp(10,69): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\neumont\C++\GameEngine\GameEngine\Source\Player.cpp(10,64): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56): warning C4244:         ]
+  (compiling source file 'Source/Player.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(3465,56):
+  the template instantiation context (the oldest one first) is
+  	C:\neumont\C++\GameEngine\GameEngine\Source\Actors.h(21,21):
+  	see reference to function template instantiation 'std::unique_ptr<Prop,std::default_delete<Prop>> std::make_unique<Prop,Transform,Model*,int,0>(Transform &&,Model *&&,int &&)' being compiled
+  
+  Prop.cpp
+  Generating Code...
   GameEngine.vcxproj -> C:\neumont\C++\GameEngine\x64\Debug\Game.exe

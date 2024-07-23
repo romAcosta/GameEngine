@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include <list>
 
 class Renderer;
@@ -11,16 +12,16 @@ public:
 	Scene() = default;
 
 	void Update(float dt);
-	void Draw(Renderer& renderer);
+	void Draw( Renderer& renderer);
 
-	void AddActor(Actor* actor);
+	void AddActor(std::unique_ptr < Actor> actor);
 	
 	template<typename T>
 	T* GetActor();
 
 protected:
 
-	std::list<Actor*> m_actors;
+	std::list<std::unique_ptr<Actor>> m_actors;
 
 };
 

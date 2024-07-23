@@ -11,7 +11,7 @@ void Particle::Update(float dt)
 
 void Particle::Draw(Renderer& renderer)
 {
-	
-	if(!(lifespan <= 0)) renderer.DrawRect(position.x, position.y, 4.0f, 5.0f);
+	renderer.SetColor(Color::ToInt(color.r), Color::ToInt(color.g), Color::ToInt(color.b), Color::ToInt(color.a));
+	renderer.DrawRect(position.x, position.y, 1.0f, 2.0f);
 
 }

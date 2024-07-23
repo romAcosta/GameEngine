@@ -44,7 +44,7 @@ bool Text::Create(Renderer& renderer, const std::string& text, const Color& colo
 
 void Text::Draw(Renderer& renderer, int x, int y)
 {
-	assert(m_texture);
+	//assert(m_texture);
 
 	// query the texture for the texture width and height
 	int width, height;

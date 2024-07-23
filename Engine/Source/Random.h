@@ -16,3 +16,8 @@ inline Vector2 randomOnUnitCircle() {
 	float angle = randomf(0, 360);
 	return Vector2{ Math::Cos(Math::DegToRad(angle)),Math::Sin(Math::DegToRad(angle)) };
 }
+
+inline Vector2 randomOnUnitCircle(float minAngle, float maxAngle) {
+	float angle = randomf(minAngle, maxAngle);
+	return Vector2{ Math::Cos(Math::DegToRad(angle)),Math::Sin(Math::DegToRad(angle)) };
+}

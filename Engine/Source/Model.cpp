@@ -42,5 +42,5 @@ float Model::GetRadius()
 		}
 	}
 
-	return radius;
+	return radius ;
 }

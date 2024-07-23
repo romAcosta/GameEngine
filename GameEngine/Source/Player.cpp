@@ -2,49 +2,98 @@
 #include "Engine.h"
 #include "Bullet.h"
 #include "Scene.h"
+#include "Actors.h"
+#include "Particle.h"
 #include <iostream>
+
+std::vector<Particle> particles;
+Color breathColors[] = {Color{0,1,1},Color{0.5,0.5,0.5}, Color{0.05,0.45,0.58}};
+
+void Player::Draw(Renderer& renderer) {
+
+	for (Particle& particle : particles) {
+		particle.Draw(renderer);
+
+	}
+
+	Actor::Draw(renderer);
+}
+
+
 
 
 void Player::Update(float dt)
 {
-	float thrust = 0;
-	if (g_engine.GetInput().GetKeyDown(SDL_SCANCODE_LEFT))  m_transform.rotation -= Math::DegToRad(100) * dt;
-	if (g_engine.GetInput().GetKeyDown(SDL_SCANCODE_RIGHT))  m_transform.rotation += Math::DegToRad(100) * dt;
-
-
-	if (g_engine.GetInput().GetKeyDown(SDL_SCANCODE_UP))        thrust = m_speed;
-	if (g_engine.GetInput().GetKeyDown(SDL_SCANCODE_DOWN))    thrust = -m_speed;
-	Vector2 acceleration = Vector2{ 1.0f, 0.0f }.Rotate(m_transform.rotation) * thrust;
-	m_velocity += acceleration;
 	
-	m_transform.position.x = Math::Wrap(m_transform.position.x, (float)g_engine.GetRenderer().GetWidth());
-	m_transform.position.y = Math::Wrap(m_transform.position.y, (float)g_engine.GetRenderer().GetHeight());
 
-	
+
+
+
 
 	//fire
 	m_firetimer -= dt;
-	if (g_engine.GetInput().GetKeyDown(SDL_SCANCODE_SPACE) && m_firetimer <= 0) {
+	if (g_engine.GetInput().GetKeyDown(SDL_SCANCODE_SPACE)&& GroundCheck()) {
 
-		m_firetimer = 0.3f;
+		
 
-		std::vector<Vector2> points;
-		points.push_back(Vector2{ 5, 0 });
-		points.push_back(Vector2{ -5, -5 });
-		points.push_back(Vector2{ -5, 5 });
-		points.push_back(Vector2{ 5, 0 });
+		if (m_firetimer <= 0) {
+		m_firetimer = 0.1f;
 
-		// actor
-		Model* model = new Model{ points, Color{ 1, 0, 0 } };
-		Transform transform{ m_transform.position,m_transform.rotation, 1.0f };
+			m_scene->AddActor(actorLib.bullet(m_transform.position));
+		}
 
-		Bullet* bullet = new Bullet(400.0f, transform ,model);
-		bullet->SetLifespan(0.5f);
-		bullet->SetTag("Player");
-		m_scene->AddActor(bullet);
+		
+		
+
+		for (int i = 0; i < (random(300, 600)); i++) {
+			particles.push_back(Particle{ m_transform.position + Vector2{50,-40}, randomOnUnitCircle(22,27) * randomf(250,400), breathColors[random(2)],.6f});
+		}
+		
+		
+		
 	}
 
+
+	
+	//Ground check and jumping
+	if (GroundCheck() && !m_jumping) {
+		
+		m_velocity.y = 0;
+
+
+		if (g_engine.GetInput().GetKeyDown(SDL_SCANCODE_UP)) {
+
+
+			m_jumping = true;
+		}
+		
+	}
+	else if (!m_jumping){
+		Gravity(dt);
+	}
+	
+	if (m_jumping ) {
+		m_velocity.y -= m_jumpSpeed * dt;
+		m_jumpTimer -= dt;
+	}
+	
+	if (m_jumpTimer <= 0) {
+		m_jumping = false;
+		m_jumpTimer = m_timerJumpMax;
+	}
+
+	for (Particle& particle : particles) {
+		particle.Update(dt);
+
+	}
+
+	particles.erase(
+		std::remove_if(particles.begin(),	particles.end(), [](Particle& particle) { return particle.lifespan <= 0; }), particles.end()
+	);
+
 	Actor::Update(dt);
+	
+	
 }
 
 void Player::OnCollision(Actor* actor)
@@ -52,4 +101,33 @@ void Player::OnCollision(Actor* actor)
 	if (actor->GetTag() == "Enemy") {
 		m_destroyed = true;
 	}
+
+	
 }
+
+bool Player::GroundCheck()
+{
+	float floorHeight = actorLib.floor()->GetTransform().position.y -(m_model->GetRadius() )*4;
+	if (m_transform.position.y >= floorHeight) {
+		
+		return true;
+	}
+	return false;
+}
+
+void Player::Gravity(float dt)
+{
+	
+	m_velocity.y += m_gravStrength * dt ;
+
+	if (m_velocity.y >= m_speed) {
+		m_velocity.y = m_speed;
+	}
+
+
+
+}
+
+
+
+
