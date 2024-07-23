@@ -1,4 +1,5 @@
 #pragma once
+
 #include <memory>
 #include <list>
 
@@ -15,13 +16,16 @@ public:
 	void Draw( Renderer& renderer);
 
 	void AddActor(std::unique_ptr < Actor> actor);
-	
+	int GetScore() { return score; }
+	void AddScore(int score) { this->score += score; }
+
 	template<typename T>
 	T* GetActor();
 
 protected:
 
 	std::list<std::unique_ptr<Actor>> m_actors;
+	int score = 0;
 
 };
 

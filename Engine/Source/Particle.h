@@ -7,7 +7,7 @@ struct Particle
 {
 	Vector2 position{ 0,0 };
 	Vector2 velocity{ 0,0 };
-	float lifespan = .45f;
+	float lifespan = .05f;
 	Color color{ 1,1,1 };
 
 	Particle() = default;

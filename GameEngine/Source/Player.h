@@ -24,7 +24,7 @@ public:
 	void Draw(Renderer& renderer);
 	void Update(float dt);
 	void OnCollision(Actor* actor);
-	float GetRadius() { return (m_model) ? (m_model->GetRadius() - 5) * m_transform.scale : 0; }
+	float GetRadius() { return (m_model) ? (m_model->GetRadius() - 10) * m_transform.scale : 0; }
 	bool GroundCheck();
 	void Gravity(float dt);
 

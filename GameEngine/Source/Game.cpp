@@ -12,9 +12,9 @@ bool Game::Initialize()
 	
 	score = 0;
 	
-	scene->AddActor(std::move(actorLib.player(Color{0,0,0})));
+	scene->AddActor(std::move(actorLib.player(Color{01,01,01})));
 	scene->AddActor(std::move(actorLib.floor()));
-	scene->AddActor(std::move(actorLib.building(300)));
+	scene->AddActor(std::move(actorLib.building(25)));
 	//scene->AddActor(std::move(actorLib.ball()));
 	m_scenes["Game"] = scene;
 	m_currentScene = m_scenes.at("Game");
@@ -30,7 +30,7 @@ std::string Score;
 void Game::Update(float dt)
 {
 	Score = "Score: " + score;
-	score += 222 * dt;
+	score = scene->GetScore();
 	
 	
 	
@@ -58,7 +58,7 @@ void Game::Update(float dt)
 	spawnTimer -= dt;
 	if (spawnTimer <= 0) {
 		
-		scene->AddActor(std::move(actorLib.building(250)));
+		//scene->AddActor(std::move(actorLib.building(100)));
 		spawnTimer = 2;
 	}
 
@@ -90,7 +90,7 @@ void Game::Update(float dt)
 }
 
 void Game::Draw(Renderer& renderer) {
-	g_engine.GetRenderer().SetColor(255, 255, 255, 0);
+	g_engine.GetRenderer().SetColor(0, 0, 0, 0);
 	g_engine.GetRenderer().DrawRect(0, 0, g_engine.GetRenderer().GetWidth() * 2, g_engine.GetRenderer().GetHeight() * 2);
 	text->Draw(renderer, 40, 40);
 	text->Create(g_engine.GetRenderer(), "Score: " + std::to_string(score), Color{ 1.0f, 0, 0, 1.0f });
