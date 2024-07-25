@@ -135,14 +135,14 @@ struct Models
 		return model;
 	}
 
-	Model* ball(Color color) {
+	Model* ball() {
 
 		std::vector<Vector2> points;
 		for (int i = 0; i < 361; i++) {
 			points.push_back(OnUnitCircle(i));
 		}
 		
-		Model* model = new Model{ points, Color{0,0,0 } };
+		Model* model = new Model{ points, Color{1,1,1 } };
 		return model;
 	}
 

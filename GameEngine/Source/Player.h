@@ -34,6 +34,7 @@ private:
 
 	float m_jumpSpeed = 4200;
 	
+	bool start_sound = true;
 
 	float m_timerJumpMax = .125f;
 	float m_jumpTimer = m_timerJumpMax;

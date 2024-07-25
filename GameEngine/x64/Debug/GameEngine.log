@@ -1,3 +1,17 @@
-﻿  Enemy.cpp
-C:\neumont\C++\GameEngine\GameEngine\Source\Enemy.cpp(9,80): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  Game.cpp
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,54): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,49): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(15,44): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Source/Game.cpp')
+  
+C:\neumont\C++\GameEngine\GameEngine\Source\Models.h(142,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source/Game.cpp')
+  
   GameEngine.vcxproj -> C:\neumont\C++\GameEngine\x64\Debug\Game.exe

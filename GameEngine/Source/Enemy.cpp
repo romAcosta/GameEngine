@@ -18,13 +18,13 @@ void Enemy::Update(float dt)
 	
 	if (health <= 0) {
 		for (int i = 0; i < (5); i++) {
-			particles.push_back(Particle{ m_transform.position + Vector2{3,-2}, randomOnUnitCircle(220,310) * Vector2 { randomf(20,50),randomf(50,100) }, fireColors[random(0,3)],.2f });
+			particles.push_back(Particle{ m_transform.position + Vector2{3,-2}, randomOnUnitCircle(220,310) * Vector2 { randomf(-150,-80),randomf(50,100) }, fireColors[random(0,3)],.2f });
 		}
 		for (int i = 0; i < (5); i++) {
-			particles.push_back(Particle{ m_transform.position + Vector2{-10,-2}, randomOnUnitCircle(220,310) * Vector2 { randomf(20,50),randomf(50,100) }, fireColors[random(0,3)],.2f });
+			particles.push_back(Particle{ m_transform.position + Vector2{-10,-2}, randomOnUnitCircle(220,310) * Vector2 { randomf(-150,-80),randomf(50,100) }, fireColors[random(0,3)],.2f });
 		}
 		for (int i = 0; i < (5); i++) {
-			particles.push_back(Particle{ m_transform.position + Vector2{-4,30}, randomOnUnitCircle(220,310) * Vector2 { randomf(20,50),randomf(50,100) }, fireColors[random(0,3)],.2f });
+			particles.push_back(Particle{ m_transform.position + Vector2{-4,30}, randomOnUnitCircle(220,310) * Vector2 { randomf(-150,-80),randomf(50,100) }, fireColors[random(0,3)],.2f });
 		}
 	}
 

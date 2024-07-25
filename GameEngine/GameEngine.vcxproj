@@ -152,6 +152,7 @@
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Prop.cpp" />
+    <ClCompile Include="Source\Sun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Actors.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Source\Models.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Prop.h" />
+    <ClInclude Include="Source\Sun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

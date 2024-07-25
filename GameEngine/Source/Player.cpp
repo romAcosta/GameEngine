@@ -26,7 +26,12 @@ void Player::Update(float dt)
 {
 	
 
-
+	if (m_scene->GetDay()) {
+		m_model->ChangeColor(Color(0, 0, 0));
+	}
+	else {
+		m_model->ChangeColor(Color(1,1,1));
+	}
 
 
 
@@ -41,7 +46,10 @@ void Player::Update(float dt)
 
 			m_scene->AddActor(actorLib.bullet(m_transform.position));
 		}
-
+		if (start_sound) {
+			start_sound = false;
+			g_engine.GetAudio().PlaySFX(false, "breath.wav");
+		}
 		
 		
 
@@ -51,6 +59,10 @@ void Player::Update(float dt)
 		
 		
 		
+	}
+	else {
+		start_sound = true;
+		g_engine.GetAudio().StopSFX();
 	}
 
 
@@ -99,6 +111,8 @@ void Player::Update(float dt)
 void Player::OnCollision(Actor* actor)
 {
 	if (actor->GetTag() == "Enemy") {
+		g_engine.GetAudio().StopSFX();
+		m_scene->GameOver();
 		m_destroyed = true;
 	}
 

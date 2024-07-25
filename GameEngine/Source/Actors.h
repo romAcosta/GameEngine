@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "Prop.h"
+#include "Sun.h"
 #include "Models.h"
 #include <memory>
 
@@ -17,9 +18,9 @@ struct Actors {
 		return floor;
 	}
 
-	std::unique_ptr<Actor> ball(Color color) {
-		auto floor = std::make_unique< Prop>(Transform{ {300,200} ,0,70 }, modLib.ball(color), 50);
-		return floor;
+	std::unique_ptr<Actor> sun() {
+		auto sun = std::make_unique< Sun>(Transform{ {700,100} ,0,70 }, modLib.ball());
+		return sun;
 	}
 	
 

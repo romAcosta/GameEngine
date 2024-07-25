@@ -14,7 +14,8 @@ public:
 		TITLE,
 		SHIFT,
 		GAME,
-		GAMEOVER
+		GAMEOVER,
+		RESTART
 
 
 	};
@@ -31,13 +32,14 @@ private:
 	std::map<std::string,Scene*> m_scenes;
 	Scene* m_currentScene;
 	
-	state current_state = TITLE;
+	state current_state = Game::TITLE;
 	Font* font = new Font();
-	
+	Font* title_font = new Font();
 	int score;
-
+	float game_speed = 1;
 
 	Text* text;
+	Text* title_text;
 	Scene* scene ;
 
 	

@@ -26,6 +26,9 @@ int main(int argc, char* argv[])
 	bool quit = false;
 	while (!quit)
 	{
+		if (g_engine.GetInput().GetKeyDown(SDL_SCANCODE_ESCAPE)) {
+			quit = true;
+		}
 		time.Tick();
 
 
